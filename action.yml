@@ -25,6 +25,13 @@ inputs:
       .github/chainguard/{identity}.sts.yaml
     required: true
 
+  revoke:
+    description: |
+      Revoke the token in post job. Defaults to true. Useful to set to false, when required to pass the token between jobs.
+      Use revoke action to revoke the token, after all jobs finished using it.
+    required: true
+    default: true
+
 outputs:
   token:
     description: |

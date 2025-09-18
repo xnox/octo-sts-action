@@ -5,6 +5,11 @@ if (!tok) {
     process.exit(0);
 }
 
+if (process.env.INPUT_REVOKE === "false") {
+    console.log(`::warning::Token requested to persist.`);
+    process.exit(0);
+}
+
 (async function main() {
     try {
         const res = await fetch('https://api.github.com/installation/token', {
